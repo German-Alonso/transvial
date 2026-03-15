@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none">
+  <!-- "t" with yellow triangle accent -->
+  <text x="0" y="66" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-size="72" fill="#ffffff" letter-spacing="-2">
+    <tspan fill="#ffffff">trans</tspan><tspan fill="#F0B400">vial</tspan>
+  </text>
+  <!-- Yellow triangle on the "t" -->
+  <polygon points="14,4 30,4 14,22" fill="#F0B400"/>
+  <!-- Dark square dot on the "i" in "vial" -->
+  <rect x="272" y="4" width="10" height="10" fill="#1a1a1a"/>
+</svg>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transvial — Panel de Administración</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Login Overlay -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-box">
+      <img src="assets/logo.png" alt="Transvial" class="login-logo">
+      <h2>Panel de Administración</h2>
+      <p>Ingresá la contraseña para acceder</p>
+      <form id="loginForm">
+        <input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="off" required>
+        <button type="submit" class="btn-admin btn-admin--primary">Ingresar</button>
+        <p class="login-error" id="loginError"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="admin-layout" id="adminLayout" style="display:none;">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__header">
+        <img src="assets/logo-white.png" alt="Transvial" class="sidebar__logo">
+        <span class="sidebar__badge">Admin</span>
+      </div>
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link active" data-section="hero">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          Hero
+        </a>
+        <a href="#" class="sidebar__link" data-section="stats">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+          Estadísticas
+        </a>
+        <a href="#" class="sidebar__link" data-section="servicios">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          Servicios
+        </a>
+        <a href="#" class="sidebar__link" data-section="residuos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          Residuos
+        </a>
+        <a href="#" class="sidebar__link" data-section="proyectos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          Proyectos
+        </a>
+        <a href="#" class="sidebar__link" data-section="equipos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3"/><path d="M15 1v3"/><path d="M9 20v3"/><path d="M15 20v3"/><path d="M20 9h3"/><path d="M20 14h3"/><path d="M1 9h3"/><path d="M1 14h3"/></svg>
+          Equipos
+        </a>
+        <a href="#" class="sidebar__link" data-section="maquinaria">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          Maquinaria
+        </a>
+        <a href="#" class="sidebar__link" data-section="clientes">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Clientes
+        </a>
+        <a href="#" class="sidebar__link" data-section="contacto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Contacto
+        </a>
+        </a>
+      </nav>
+      <div class="sidebar__footer">
+        <a href="index.html" class="sidebar__link sidebar__link--back" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Ver sitio web
+        </a>
+        <button class="sidebar__link sidebar__link--danger" id="btnExport">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Exportar datos
+        </button>
+        <label class="sidebar__link sidebar__link--import">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17,8 12,3 7,8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Importar datos
+          <input type="file" id="btnImport" accept=".json" hidden>
+        </label>
+      </div>
+    </aside>
+
+    <!-- Mobile top bar -->
+    <div class="topbar">
+      <button class="topbar__toggle" id="sidebarToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <img src="assets/logo-white.png" alt="Transvial" class="topbar__logo">
+      <span class="topbar__badge">Admin</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+
+      <!-- ===== HERO SECTION ===== -->
+      <section class="admin-section" id="sec-hero">
+        <div class="admin-section__header">
+          <h1>Hero</h1>
+          <p>Editá el contenido principal de la página de inicio</p>
+        </div>
+        <div class="admin-card">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Badge (texto superior)</label>
+              <input type="text" id="heroBadge" placeholder="Desde 1990 en Canelones, Uruguay">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Título línea 1</label>
+              <input type="text" id="heroTitle1" placeholder="Obras que perduran.">
+            </div>
+            <div class="form-field">
+              <label>Título línea 2 (destacado)</label>
+              <input type="text" id="heroTitle2" placeholder="Resultados concretos.">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Subtítulo</label>
+              <textarea id="heroSubtitle" rows="3" placeholder="Descripción principal del hero..."></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Texto botón primario</label>
+              <input type="text" id="heroBtnPrimary" placeholder="Solicitar presupuesto">
+            </div>
+            <div class="form-field">
+              <label>Texto botón secundario</label>
+              <input type="text" id="heroBtnSecondary" placeholder="Ver servicios">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Imagen Inicio 1 (Slider)</label>
+              <div id="heroDropzone1"></div>
+            </div>
+            <div class="form-field">
+              <label>Imagen Inicio 2 (Slider)</label>
+              <div id="heroDropzone2"></div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Fondo para Construcción</label>
+              <select id="heroBgConstruccion">
+                <option value="1">Imagen Inicio 1</option>
+                <option value="2">Imagen Inicio 2</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Fondo para Residuos</label>
+              <select id="heroBgResiduos">
+                <option value="1">Imagen Inicio 1</option>
+                <option value="2">Imagen Inicio 2</option>
+              </select>
+            </div>
+          </div>
+          <div class="admin-card__actions">
+            <button class="btn-admin btn-admin--primary" onclick="saveHero()">Guardar cambios</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== STATS SECTION ===== -->
+      <section class="admin-section" id="sec-stats" style="display:none;">
+        <div class="admin-section__header">
+          <h1>Estadísticas</h1>
+          <p>Editá los números destacados de la barra de estadísticas</p>
+        </div>
+        <div class="admin-card">
+          <div id="statsContainer"></div>
+          <div class="admin-card__actions">
+            <button class="btn-admin btn-admin--primary" onclick="saveStats()">Guardar cambios</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SERVICIOS SECTION ===== -->
+      <section class="admin-section" id="sec-servicios" style="display:none;">
+        <div class="admin-section__header">
+          <div>
+            <h1>Servicios</h1>
+            <p>Gestioná los servicios que aparecen en el sitio</p>
+          </div>
+          <button class="btn-admin btn-admin--primary" onclick="addServicio()">+ Agregar servicio</button>
+        </div>
+        <div id="serviciosContainer" class="admin-items-grid"></div>
+      </section>
+
+      <!-- ===== RESIDUOS SECTION ===== -->
+      <section class="admin-section" id="sec-residuos" style="display:none;">
+        <div class="admin-section__header">
+          <div>
+            <h1>Gestión de Residuos</h1>
+            <p>Editá la sección de gestión de residuos y agregá trabajos realizados</p>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3 class="admin-card__subtitle">Descripción principal</h3>
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Párrafo 1</label>
+              <textarea id="residuosDesc1" rows="3" placeholder="Descripción principal de la sección de residuos..."></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field full">
+              <label>Párrafo 2</label>
+              <textarea id="residuosDesc2" rows="3" placeholder="Segundo párrafo..."></textarea>
+            </div>
+          </div>
+          <div class="admin-card__actions">
+            <button class="btn-admin btn-admin--primary" onclick="saveResiduosDesc()">Guardar descripción</button>
+          </div>
+        </div>
+        <div class="admin-section__header" style="margin-top:20px;">
+          <div>
+            <h3 style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:0.05em;color:var(--text);">Trabajos de Residuos</h3>
+            <p>Proyectos y trabajos realizados en gestión de residuos</p>
+          </div>
+          <button class="btn-admin btn-admin--primary" onclick="addResiduo()">+ Agregar trabajo</button>
+        </div>
+        <div id="residuosContainer" class="admin-items-grid"></div>
+      </section>
+
+      <!-- ===== PROYECTOS SECTION ===== -->
+      <section class="admin-section" id="sec-proyectos" style="display:none;">
+        <div class="admin-section__header">
+          <div>
+            <h1>Proyectos</h1>
+            <p>Agregá y editá los proyectos destacados</p>
+          </div>
+          <button class="btn-admin btn-admin--primary" onclick="addProyecto()">+ Agregar proyecto</button>
+        </div>
+        <div id="proyectosContainer" class="admin-items-grid"></div>
+      </section>
+
+      <!-- ===== EQUIPOS SECTION ===== -->
+      <section class="admin-section" id="sec-equipos" style="display:none;">
+        <div class="admin-section__header">
+          <div>
+            <h1>Categorías de Equipos</h1>
+            <p>Gestioná los tipos de maquinaria y categorías principales</p>
+          </div>
+          <button class="btn-admin btn-admin--primary" onclick="addEquipo()">+ Agregar categoría</button>
+        </div>
+        <div id="equiposContainer" class="admin-items-grid"></div>
+      </section>
+
+      <!-- ===== MAQUINARIA SECTION ===== -->
+      <section class="admin-section" id="sec-maquinaria" style="display:none;">
+        <div class="admin-section__header">
+          <div>
+            <h1>Maquinaria Específica</h1>
+            <p>Registrá unidades individuales y asignalas a las categorías de equipos disponibles</p>
+          </div>
+          <button class="btn-admin btn-admin--primary" onclick="addMaquinaria()">+ Agregar maquinaria</button>
+        </div>
+        <div id="maquinariaContainer" class="admin-items-grid"></div>
+      </section>
+
+      <!-- ===== CLIENTES SECTION ===== -->
+      <section class="admin-section" id="sec-clientes" style="display:none;">
+        <div class="admin-section__header">
+          <div>
+            <h1>Clientes</h1>
+            <p>Gestioná la lista de clientes</p>
+          </div>
+          <button class="btn-admin btn-admin--primary" onclick="addCliente()">+ Agregar cliente</button>
+        </div>
+        <div id="clientesContainer" class="admin-items-grid"></div>
+      </section>
+
+      <!-- ===== CONTACTO SECTION ===== -->
+      <section class="admin-section" id="sec-contacto" style="display:none;">
+        <div class="admin-section__header">
+          <h1>Contacto</h1>
+          <p>Editá la información de contacto</p>
+        </div>
+        <div class="admin-card">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Dirección</label>
+              <input type="text" id="contactDireccion" placeholder="Ruta 81 Km. 23, San Antonio, Canelones">
+            </div>
+            <div class="form-field">
+              <label>Teléfono</label>
+              <input type="text" id="contactTelefono" placeholder="+598 4335 9036">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>WhatsApp (número)</label>
+              <input type="text" id="contactWhatsapp" placeholder="+598 99 332817">
+            </div>
+            <div class="form-field">
+              <label>WhatsApp (link wa.me)</label>
+              <input type="text" id="contactWhatsappLink" placeholder="https://wa.me/59899332817">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" id="contactEmail" placeholder="info@transvial.com.uy">
+            </div>
+            <div class="form-field">
+              <label>RUT</label>
+              <input type="text" id="contactRut" placeholder="02 011300 0019">
+            </div>
+          </div>
+          <div class="admin-card__actions">
+            <button class="btn-admin btn-admin--primary" onclick="saveContacto()">Guardar cambios</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20,6 9,17 4,12"/></svg>
+    <span id="toastMsg">Guardado correctamente</span>
+  </div>
+
+  <!-- Modal for editing items -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal__header">
+        <h2 id="modalTitle">Editar</h2>
+        <button class="modal__close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal__body" id="modalBody"></div>
+      <div class="modal__footer">
+        <button class="btn-admin btn-admin--ghost" onclick="closeModal()">Cancelar</button>
+        <button class="btn-admin btn-admin--primary" id="modalSave">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirm Delete Modal -->
+  <div class="modal-overlay" id="confirmOverlay" style="display:none">
+    <div class="modal" style="max-width:420px">
+      <div class="modal__header">
+        <h2>Confirmar eliminación</h2>
+        <button class="modal__close" onclick="cancelDelete()">&times;</button>
+      </div>
+      <div class="modal__body">
+        <p id="confirmMsg" style="font-size:1rem;color:var(--text-secondary);margin:0">¿Seguro que querés eliminar este elemento?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn-admin btn-admin--ghost" onclick="cancelDelete()">Cancelar</button>
+        <button class="btn-admin btn-admin--primary" id="confirmYes" style="background:var(--danger, #e53e3e)">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js?v=2"></script>
+</body>
+</html>

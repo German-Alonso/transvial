@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transvial Ltda. — Obras Viales, Civiles y Gestión de Residuos en Uruguay</title>
+  <meta name="description" content="Más de 30 años ejecutando obras viales, civiles, hidráulicas, movimiento de tierras y gestión de residuos en Uruguay. Transvial Ltda., empresa constructora con sede en Canelones.">
+  <meta property="og:title" content="Transvial Ltda. — Obras Viales, Civiles y Gestión de Residuos en Uruguay">
+  <meta property="og:description" content="Empresa constructora con más de 30 años de experiencia en obras pesadas, infraestructura vial, civil e hidráulica en Uruguay.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_UY">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container container--wide">
+      <a href="#hero" class="navbar__logo">
+        <img src="assets/logo-white.png" alt="Transvial Ltda." class="navbar__logo-img">
+      </a>
+      <div class="navbar__links">
+        <a href="#servicios">Servicios</a>
+        <a href="#residuos">Residuos</a>
+        <a href="#construccion">Construcción</a>
+        <a href="#flota">Equipos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#contacto" class="navbar__cta">Contacto</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__badge">Desde 1990 en Canelones, Uruguay</div>
+        <h1>Obras que perduran.<br><em>Resultados concretos.</em></h1>
+        <p class="hero__subtitle">
+          Más de 30 años ejecutando obras viales, civiles, hidráulicas y movimiento de tierras en todo el territorio uruguayo. Infraestructura pesada con rigor técnico y compromiso.
+        </p>
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--primary">Solicitar presupuesto</a>
+          <a href="#servicios" class="btn btn--outline">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== STATS BAR ====== -->
+  <div class="stats-bar">
+    <div class="container container--wide">
+      <div class="stats-bar__grid">
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">+30</div>
+          <div class="stats-bar__label">Años de trayectoria</div>
+        </div>
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">+60</div>
+          <div class="stats-bar__label">Proyectos ejecutados</div>
+        </div>
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">5</div>
+          <div class="stats-bar__label">Líneas de servicio</div>
+        </div>
+        <div class="stats-bar__item">
+          <div class="stats-bar__number">100%</div>
+          <div class="stats-bar__label">Cobertura nacional</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== SERVICIOS ====== -->
+  <section class="servicios" id="servicios">
+    <div class="container">
+      <div class="servicios__header reveal">
+        <div class="section-label">Qué hacemos</div>
+        <h2 class="section-title">Servicios</h2>
+        <p class="section-desc">Soluciones integrales en obra pesada, infraestructura y gestión ambiental para proyectos de toda escala.</p>
+      </div>
+      <div class="servicios__grid">
+        <!-- Card 01 -->
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-card__number">01</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 44h40"/><path d="M10 44V28l8-8 8 8v16"/><path d="M30 44V20l8-8v32"/><path d="M14 36h4"/><path d="M14 32h4"/><path d="M34 28h4"/><path d="M34 32h4"/>
+            </svg>
+          </div>
+          <h3>Movimiento de Tierras y Excavaciones</h3>
+          <p class="service-card__desc">Preparación de terrenos para obras de infraestructura con maquinaria pesada propia.</p>
+          <ul class="service-card__list">
+            <li>Excavaciones masivas y selectivas</li>
+            <li>Rellenos y compactación</li>
+            <li>Perfilado y nivelación de terrenos</li>
+            <li>Desmonte y limpieza de predios</li>
+            <li>Transporte de materiales</li>
+          </ul>
+        </div>
+        <!-- Card 02 -->
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-card__number">02</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 36h40"/><path d="M8 36l4-16h24l4 16"/><path d="M16 20v-6h16v6"/><path d="M20 36v-8h8v8"/><circle cx="12" cy="36" r="3"/><circle cx="36" cy="36" r="3"/>
+            </svg>
+          </div>
+          <h3>Obras Viales, Civiles e Hidráulicas</h3>
+          <p class="service-card__desc">Construcción de caminos, puentes, alcantarillas y obras de drenaje para infraestructura pública y privada.</p>
+          <ul class="service-card__list">
+            <li>Construcción y mantenimiento de caminos</li>
+            <li>Obras de drenaje y alcantarillado</li>
+            <li>Puentes y obras hidráulicas</li>
+            <li>Pavimentación y sub-base</li>
+            <li>Señalización vial</li>
+          </ul>
+        </div>
+        <!-- Card 03 -->
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-card__number">03</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="18" width="36" height="26" rx="1"/><path d="M14 18V10h20v8"/><path d="M6 28h36"/><path d="M18 28v16"/><path d="M30 28v16"/><path d="M6 38h36"/>
+            </svg>
+          </div>
+          <h3>Construcción Civil</h3>
+          <p class="service-card__desc">Ejecución de obras civiles complejas: edificios, plataformas industriales, fundaciones y estructuras.</p>
+          <ul class="service-card__list">
+            <li>Edificios residenciales y comerciales</li>
+            <li>Plataformas industriales</li>
+            <li>Fundaciones y estructuras de hormigón</li>
+            <li>Excavaciones en roca</li>
+            <li>Obras subterráneas</li>
+          </ul>
+        </div>
+        <!-- Card 04 -->
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-card__number">04</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="24" r="18"/><path d="M24 6v6"/><path d="M24 36v6"/><path d="M6 24h6"/><path d="M36 24h6"/><path d="M18 18l12 12"/><path d="M30 18L18 30"/>
+            </svg>
+          </div>
+          <h3>Gestión de Residuos</h3>
+          <p class="service-card__desc">Operación de sitios de disposición final de residuos con monitoreo ambiental y cumplimiento normativo.</p>
+          <ul class="service-card__list">
+            <li>Operación de sitios de disposición final</li>
+            <li>Monitoreo ambiental continuo</li>
+            <li>Mantenimiento perimetral</li>
+            <li>Personal permanente en obra</li>
+            <li>Trazabilidad de residuos CD&R</li>
+          </ul>
+        </div>
+        <!-- Card 05 -->
+        <div class="service-card reveal reveal-delay-5">
+          <div class="service-card__number">05</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="24" width="18" height="14" rx="1"/><path d="M22 28h10l6 6v4H22"/><circle cx="12" cy="40" r="4"/><circle cx="34" cy="40" r="4"/><path d="M8 24v-6h10v6"/><rect x="26" y="8" width="14" height="12" rx="1"/><path d="M30 20v4"/>
+            </svg>
+          </div>
+          <h3>Alquiler y Transporte de Equipos Viales</h3>
+          <p class="service-card__desc">Flota de maquinaria pesada disponible para alquiler y servicio de transporte especializado.</p>
+          <ul class="service-card__list">
+            <li>Excavadoras y retroexcavadoras</li>
+            <li>Motoniveladoras y compactadoras</li>
+            <li>Camiones volcadores</li>
+            <li>Transporte de cargas sobredimensionadas</li>
+            <li>Operadores calificados</li>
+          </ul>
+        </div>
+        <!-- Card 06 -->
+        <div class="service-card reveal reveal-delay-6">
+          <div class="service-card__number">06</div>
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 44h40"/><path d="M8 44V16L24 4l16 12v28"/><path d="M18 44V32h12v12"/><path d="M14 22h4v4h-4z"/><path d="M30 22h4v4h-4z"/><path d="M14 30h4v4h-4z"/><path d="M30 30h4v4h-4z"/>
+            </svg>
+          </div>
+          <h3>Venta de Materiales de Construcción</h3>
+          <p class="service-card__desc">Suministro de materiales para obra: pedregullo, arena, balasto, tosca y otros agregados.</p>
+          <ul class="service-card__list">
+            <li>Pedregullo y arena</li>
+            <li>Balasto y tosca</li>
+            <li>Piedra partida y bruta</li>
+            <li>Materiales seleccionados</li>
+            <li>Entrega en obra</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GESTIÓN DE RESIDUOS ====== -->
+  <section class="residuos" id="residuos">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Gestión ambiental</div>
+        <h2 class="section-title">Gestión de Residuos</h2>
+      </div>
+      <div class="residuos__content">
+        <div class="residuos__text reveal">
+          <p>
+            Operamos sitios de disposición final de residuos con personal permanente, monitoreo ambiental continuo y estricto cumplimiento de la normativa vigente. Nuestra experiencia incluye la operación integral de instalaciones para la gestión ambientalmente responsable de residuos sólidos.
+          </p>
+          <p>
+            Cada operación cuenta con mantenimiento perimetral, control de accesos, y un equipo técnico dedicado que garantiza trazabilidad y transparencia en todos los procesos.
+          </p>
+          <div class="residuos__features">
+            <div class="residuos__feature">
+              <div class="residuos__feature-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg>
+              </div>
+              <div>
+                <h4>Monitoreo 24/7</h4>
+                <p>Control ambiental continuo</p>
+              </div>
+            </div>
+            <div class="residuos__feature">
+              <div class="residuos__feature-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h14"/><path d="M10 3v14"/><circle cx="10" cy="10" r="8"/></svg>
+              </div>
+              <div>
+                <h4>Personal en Sitio</h4>
+                <p>Equipo permanente calificado</p>
+              </div>
+            </div>
+            <div class="residuos__feature">
+              <div class="residuos__feature-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="14" height="14" rx="1"/><path d="M7 10l2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h4>Control Perimetral</h4>
+                <p>Mantenimiento de cercos y accesos</p>
+              </div>
+            </div>
+            <div class="residuos__feature">
+              <div class="residuos__feature-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 16l4-4 3 3 5-5"/><path d="M12 6h4v4"/></svg>
+              </div>
+              <div>
+                <h4>Trazabilidad</h4>
+                <p>Registro completo de operaciones</p>
+              </div>
+            </div>
+          </div>
+          <div class="residuos__badge" style="margin-top:20px;">
+            <div class="residuos__badge-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M24 4L6 14v20l18 10 18-10V14L24 4z"/><path d="M24 24v20"/><path d="M6 14l18 10 18-10"/><circle cx="24" cy="20" r="4"/>
+              </svg>
+            </div>
+            <p>Operamos bajo <strong>Ley 19.829</strong> — Ministerio de Ambiente, Uruguay. Cumplimiento normativo integral.</p>
+          </div>
+        </div>
+        <div class="residuos__sidebar reveal reveal-delay-2">
+          <div class="residuos__project">
+            <div class="residuos__project-label">Proyecto de referencia</div>
+            <h4>Cañada Grande, Canelones</h4>
+            <p>Operación de sitio de disposición final de residuos sólidos. Gestión integral con monitoreo ambiental, mantenimiento y personal permanente.</p>
+          </div>
+          <div class="residuos__cdr">
+            <div class="residuos__cdr-label">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="7,1 13,13 1,13"/></svg>
+              Nuevo 2025
+            </div>
+            <h4>Trazabilidad de Residuos de Construcción y Demolición (CD&R)</h4>
+            <p>Posicionamiento estratégico en la gestión y trazabilidad de residuos generados en obras de construcción y demolición, alineado con las nuevas exigencias regulatorias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONSTRUCCIÓN ====== -->
+  <section class="construccion" id="construccion">
+    <div class="container">
+      <div class="construccion__header reveal">
+        <div class="section-label">Obras destacadas</div>
+        <h2 class="section-title">Construcción</h2>
+        <p class="section-desc">Obras que respaldan nuestra trayectoria en infraestructura pesada, industrial y urbana.</p>
+      </div>
+
+      <!-- Featured project: Montevideo Harbour -->
+      <div class="featured-project reveal">
+        <div class="featured-project__image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.5">
+              <rect x="5" y="15" width="50" height="35" rx="2"/><circle cx="20" cy="28" r="5"/><path d="M5 42 l15 -10 10 8 12 -14 13 16"/>
+            </svg>
+            <p>Foto del proyecto — próximamente</p>
+          </div>
+        </div>
+        <div class="featured-project__info">
+          <div class="featured-project__status">
+            <div class="pulse-dot"></div>
+            En ejecución
+          </div>
+          <h3>Montevideo Harbour</h3>
+          <div class="featured-project__meta">
+            <div class="featured-project__meta-item">
+              <strong>Ubicación</strong>
+              Rambla Baltasar Brum, Montevideo
+            </div>
+            <div class="featured-project__meta-item">
+              <strong>Superficie</strong>
+              ~65.000 m² construidos
+            </div>
+            <div class="featured-project__meta-item">
+              <strong>Unidades</strong>
+              560 apartamentos
+            </div>
+            <div class="featured-project__meta-item">
+              <strong>Cliente</strong>
+              González Conde Construcciones
+            </div>
+          </div>
+          <p class="featured-project__desc">
+            Complejo residencial y comercial sobre la Rambla Baltasar Brum, Montevideo. Incluye 560 apartamentos, oficinas y paseo comercial. Obra de gran escala actualmente en ejecución.
+          </p>
+        </div>
+      </div>
+
+      <!-- Secondary projects -->
+      <div class="projects-grid">
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-card__year">2008</div>
+          <h4>Conaprole</h4>
+          <p>Plataforma industrial para la principal empresa láctea del país. Movimiento de tierras y preparación de terreno.</p>
+          <div class="project-card__client">Cliente: Conaprole</div>
+        </div>
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-card__year">2013 — 2015</div>
+          <h4>Louis Dreyfus</h4>
+          <p>Infraestructura logística. Preparación de plataformas, accesos y obras civiles complementarias.</p>
+          <div class="project-card__client">Cliente: Louis Dreyfus</div>
+        </div>
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-card__year">2012 — 2013</div>
+          <h4>Constructora Santa María</h4>
+          <p>Excavación profunda en roca para fundaciones. Trabajo de alta complejidad técnica con maquinaria especializada.</p>
+          <div class="project-card__client">Cliente: Constructora Santa María</div>
+        </div>
+        <div class="project-card reveal reveal-delay-4">
+          <div class="project-card__year">Próximamente</div>
+          <h4>Ferrocarril</h4>
+          <p>Proyecto de infraestructura ferroviaria. Detalles en proceso de definición.</p>
+          <div class="project-card__client">Detalles a confirmar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FLOTA DE EQUIPOS ====== -->
+  <section class="flota" id="flota">
+    <div class="container">
+      <div class="flota__header reveal">
+        <div class="section-label">Nuestra maquinaria</div>
+        <h2 class="section-title">Flota de Equipos</h2>
+        <p class="section-desc">Maquinaria pesada propia, mantenida y operada por personal calificado. Disponible para alquiler.</p>
+      </div>
+      <div class="flota__grid">
+        <!-- Excavadoras -->
+        <div class="equip-card reveal reveal-delay-1">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 42h20V30H8z"/><path d="M28 42h16l4-6V30H28z"/><path d="M4 42h48"/><circle cx="14" cy="42" r="4"/><circle cx="22" cy="42" r="4"/><circle cx="40" cy="42" r="4"/><path d="M28 30V18l12-8"/><path d="M40 10l6 6-4 4"/>
+            </svg>
+          </div>
+          <h4>Excavadoras</h4>
+          <p>Equipos de excavación hidráulica para movimiento de tierras de gran volumen.</p>
+          <span class="equip-card__tag">Disponible para alquiler</span>
+        </div>
+        <!-- Retroexcavadoras -->
+        <div class="equip-card reveal reveal-delay-2">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="14" y="28" width="22" height="12" rx="1"/><circle cx="18" cy="44" r="4"/><circle cx="32" cy="44" r="4"/><path d="M14 28l-6-14"/><path d="M8 14l-4 6h8"/><path d="M36 28l8-10"/><path d="M44 18l4 4-6 4"/>
+            </svg>
+          </div>
+          <h4>Retroexcavadoras</h4>
+          <p>Máquinas versátiles para excavación, carga y movimiento de materiales en obra.</p>
+          <span class="equip-card__tag">Disponible para alquiler</span>
+        </div>
+        <!-- Motoniveladoras -->
+        <div class="equip-card reveal reveal-delay-3">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 36h36"/><rect x="26" y="22" width="16" height="14" rx="1"/><path d="M10 36l6-14h10v14"/><circle cx="14" cy="40" r="4"/><circle cx="34" cy="40" r="4"/><circle cx="42" cy="40" r="4"/><path d="M16 22l-8 14"/>
+            </svg>
+          </div>
+          <h4>Motoniveladoras</h4>
+          <p>Nivelación de terrenos, perfilado de caminos y mantenimiento de superficies.</p>
+          <span class="equip-card__tag">Disponible para alquiler</span>
+        </div>
+        <!-- Compactadoras -->
+        <div class="equip-card reveal reveal-delay-4">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="14" y="16" width="28" height="16" rx="1"/><circle cx="20" cy="42" r="8" stroke-width="3"/><circle cx="42" cy="36" r="4"/><path d="M14 24h-6v12h6"/><path d="M8 30H4"/>
+            </svg>
+          </div>
+          <h4>Compactadoras</h4>
+          <p>Rodillos vibratorios y compactadores para consolidación de suelos y bases.</p>
+          <span class="equip-card__tag">Disponible para alquiler</span>
+        </div>
+        <!-- Camiones Volcadores -->
+        <div class="equip-card reveal reveal-delay-1">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 34h26V18H6z"/><path d="M32 34h14l4-8V22H32z"/><circle cx="14" cy="40" r="4"/><circle cx="42" cy="40" r="4"/><path d="M6 26h26"/>
+            </svg>
+          </div>
+          <h4>Camiones Volcadores</h4>
+          <p>Transporte de materiales a granel: tierra, pedregullo, arena y escombros.</p>
+          <span class="equip-card__tag">Disponible para alquiler</span>
+        </div>
+        <!-- Montacargas -->
+        <div class="equip-card reveal reveal-delay-2">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="12" y="20" width="20" height="20" rx="1"/><circle cx="16" cy="44" r="4"/><circle cx="28" cy="44" r="4"/><path d="M32 34h10V12h-2"/><path d="M40 12h6"/><path d="M40 20h6"/><path d="M42 12v28"/>
+            </svg>
+          </div>
+          <h4>Montacargas</h4>
+          <p>Equipos de elevación para carga y descarga de materiales pesados.</p>
+          <span class="equip-card__tag">Disponible para alquiler</span>
+        </div>
+        <!-- Plataformas -->
+        <div class="equip-card reveal reveal-delay-3">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="28" width="48" height="6" rx="1"/><circle cx="12" cy="40" r="4"/><circle cx="28" cy="40" r="4"/><circle cx="44" cy="40" r="4"/><path d="M8 28v-8h40v8"/><path d="M20 20v-6h16v6"/>
+            </svg>
+          </div>
+          <h4>Plataformas Sobredimensionadas</h4>
+          <p>Transporte de cargas especiales y equipos sobredimensionados con escoltas.</p>
+          <span class="equip-card__tag">Disponible para alquiler</span>
+        </div>
+        <!-- Laboratorio de suelos -->
+        <div class="equip-card reveal reveal-delay-4">
+          <div class="equip-card__icon">
+            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 8v18l-10 18h36L36 26V8"/><path d="M20 8h16"/><path d="M16 38h24"/><circle cx="28" cy="34" r="3"/><path d="M24 28l-2 4"/><path d="M32 28l2 4"/><path d="M22 42h12"/>
+            </svg>
+          </div>
+          <h4>Laboratorio de Suelos In Situ</h4>
+          <p>Ensayos de densidad, humedad y compactación directamente en obra. Diferencial técnico.</p>
+          <span class="equip-card__tag equip-card__tag--tech">Diferencial técnico</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== NOSOTROS ====== -->
+  <section class="nosotros" id="nosotros">
+    <div class="container">
+      <div class="nosotros__header reveal">
+        <div class="section-label">Quiénes somos</div>
+        <h2 class="section-title">Nuestra Historia</h2>
+        <p class="section-desc">Desde San Antonio, Canelones, construimos infraestructura que marca el territorio uruguayo.</p>
+      </div>
+      <div class="nosotros__content">
+        <!-- Timeline -->
+        <div class="timeline reveal">
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">1990</div>
+            <h4>Fundación</h4>
+            <p>Nacemos como empresa familiar en San Antonio, Canelones. Primeros trabajos en movimiento de tierras y servicios viales.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">2000</div>
+            <h4>Primeros Proyectos Civiles</h4>
+            <p>Expansión hacia obras civiles e hidráulicas. Incorporación de nuevas líneas de servicio.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">2006</div>
+            <h4>Escalamiento</h4>
+            <p>Ampliación significativa de la flota de maquinaria y del equipo humano. Mayor capacidad operativa.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">2013</div>
+            <h4>Clientes Industriales</h4>
+            <p>Incorporación de clientes de gran escala: Louis Dreyfus, Conaprole, Salfacorp. Proyectos de mayor complejidad técnica.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">Hoy</div>
+            <h4>Construcción Urbana + Gestión Ambiental</h4>
+            <p>Obras de gran envergadura como Montevideo Harbour. Nuevo posicionamiento en gestión de residuos y trazabilidad CD&R.</p>
+          </div>
+        </div>
+        <!-- Values -->
+        <div class="values-grid reveal reveal-delay-2">
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6C12 6 6 12 6 20s6 14 14 14 14-6 14-14"/><path d="M34 6l-14 14"/><path d="M26 6h8v8"/>
+              </svg>
+            </div>
+            <h4>Relaciones Duraderas</h4>
+            <p>Clientes que vuelven obra tras obra. Confianza construida con resultados, no con promesas.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="20" cy="14" r="6"/><path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
+              </svg>
+            </div>
+            <h4>Capital Humano</h4>
+            <p>Operadores especializados, técnicos de campo y equipos con experiencia probada en obra pesada.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="18" width="14" height="12" rx="1"/><path d="M18 24h10l6-4v10H18z"/><circle cx="10" cy="32" r="3"/><circle cx="28" cy="32" r="3"/><path d="M14 18V12h-6"/>
+              </svg>
+            </div>
+            <h4>Flota Propia</h4>
+            <p>Maquinaria pesada propia que garantiza disponibilidad, tiempos de respuesta y control de calidad.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 4v10"/><path d="M14 8l6 6 6-6"/><rect x="6" y="14" width="28" height="22" rx="1"/><path d="M6 22h28"/><path d="M16 22v14"/><path d="M24 22v14"/>
+              </svg>
+            </div>
+            <h4>Rigor Técnico</h4>
+            <p>Laboratorio de suelos in situ, procesos de control documentados y compromiso con la calidad constructiva.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CLIENTES ====== -->
+  <section class="clientes" id="clientes">
+    <div class="container">
+      <div class="clientes__header reveal">
+        <div class="section-label">Confianza</div>
+        <h2 class="section-title">Clientes que Confían en Nosotros</h2>
+      </div>
+      <div class="clientes__grid">
+        <div class="client-card reveal reveal-delay-1">
+          <span class="client-card__name">Conaprole</span>
+        </div>
+        <div class="client-card reveal reveal-delay-1">
+          <span class="client-card__name">ANCAP</span>
+        </div>
+        <div class="client-card reveal reveal-delay-2">
+          <span class="client-card__name">Louis Dreyfus</span>
+        </div>
+        <div class="client-card reveal reveal-delay-2">
+          <span class="client-card__name">Salfacorp</span>
+        </div>
+        <div class="client-card reveal reveal-delay-3">
+          <span class="client-card__name">González Conde Construcciones</span>
+        </div>
+        <div class="client-card reveal reveal-delay-3">
+          <span class="client-card__name">Intendencia de Canelones</span>
+        </div>
+        <div class="client-card reveal reveal-delay-4">
+          <span class="client-card__name">Frigorífico Canelones</span>
+        </div>
+        <div class="client-card reveal reveal-delay-4">
+          <span class="client-card__name">Procosertel</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACTO ====== -->
+  <section class="contacto" id="contacto">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Hablemos</div>
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-desc">Estamos listos para su próximo proyecto. Solicite un presupuesto o consulte sobre nuestros servicios.</p>
+      </div>
+      <div class="contacto__content">
+        <div class="contacto__info reveal">
+          <div class="contacto__info-item">
+            <div class="contacto__info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Dirección</h4>
+              <p>Ruta 81 Km. 23, San Antonio, Canelones, Uruguay</p>
+            </div>
+          </div>
+          <div class="contacto__info-item">
+            <div class="contacto__info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Teléfono</h4>
+              <a href="tel:+59843359036">+598 4335 9036</a>
+            </div>
+          </div>
+          <div class="contacto__info-item">
+            <div class="contacto__info-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .607.607l4.458-1.495A11.952 11.952 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 0 1-5.39-1.583l-.386-.232-2.647.888.888-2.647-.232-.386A9.94 9.94 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/59899332817" target="_blank" rel="noopener">+598 99 332817</a>
+            </div>
+          </div>
+          <div class="contacto__info-item">
+            <div class="contacto__info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:info@transvial.com.uy">info@transvial.com.uy</a>
+            </div>
+          </div>
+        </div>
+        <form class="contacto__form reveal reveal-delay-2" id="contactForm">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Su nombre completo" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+598 ...">
+          </div>
+          <div class="form-group">
+            <label for="tipo">Tipo de consulta</label>
+            <select id="tipo" name="tipo" required>
+              <option value="" disabled selected>Seleccione una opción</option>
+              <option value="obra-civil-vial">Presupuesto de obra civil o vial</option>
+              <option value="movimiento-tierras">Movimiento de tierras</option>
+              <option value="alquiler-equipos">Alquiler de equipos</option>
+              <option value="transporte">Transporte especializado</option>
+              <option value="gestion-residuos">Gestión de residuos</option>
+              <option value="construccion-civil">Construcción civil</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Describa su consulta o proyecto..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--dark">Enviar consulta</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="assets/logo-white.png" alt="Transvial Ltda." class="footer__logo-img">
+          <p class="footer__tagline">Obras viales, civiles, hidráulicas y gestión de residuos en Uruguay desde 1990.</p>
+          <p class="footer__rut">RUT: 02 011300 0019</p>
+        </div>
+        <div>
+          <h4>Secciones</h4>
+          <div class="footer__links">
+            <a href="#servicios">Servicios</a>
+            <a href="#residuos">Gestión de Residuos</a>
+            <a href="#construccion">Construcción</a>
+            <a href="#flota">Equipos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#clientes">Clientes</a>
+          </div>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <div class="footer__links">
+            <a href="#servicios">Movimiento de Tierras</a>
+            <a href="#servicios">Obras Viales</a>
+            <a href="#servicios">Construcción Civil</a>
+            <a href="#residuos">Gestión de Residuos</a>
+            <a href="#flota">Alquiler de Equipos</a>
+            <a href="#servicios">Venta de Materiales</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <div class="footer__links">
+            <div class="footer__contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Ruta 81 Km. 23, Canelones
+            </div>
+            <div class="footer__contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+              +598 4335 9036
+            </div>
+            <div class="footer__contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@transvial.com.uy
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        © 2025 Transvial Ltda. Todos los derechos reservados. — San Antonio, Canelones, Uruguay.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
