@@ -273,6 +273,7 @@ async function loadAdminContent() {
           <ul class="service-card__list">
             ${(s.items || []).map(item => `<li>${escHtml(item)}</li>`).join('')}
           </ul>
+          <a href="#contacto" class="service-card__btn">Consultar</a>
         </div>
       `).join('');
     }
