@@ -1922,14 +1922,51 @@ h4 { font-size: clamp(1rem, 1.5vw, 1.2rem); }
 
   /* Footer */
   .footer__content { grid-template-columns: 1fr; gap: 30px; }
+
+  /* Modals Response */
+  .project-modal__content, .maquinaria-modal__content {
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .project-modal__image { height: 200px; }
+  .maquinaria-modal__image { height: 200px; }
+  
+  .project-modal__body, .maquinaria-modal__info {
+    padding: 24px 20px;
+  }
+  
+  .project-modal__title, .maquinaria-modal__title {
+    font-size: 1.35rem;
+  }
+  
+  .project-modal__meta { gap: 15px; }
+  .project-modal__meta-item { font-size: 0.82rem; }
+  .project-modal__desc, .maquinaria-modal__desc { font-size: 0.9rem; }
 }
 
 @media (max-width: 480px) {
+  :root {
+    --section-padding: 50px 0;
+  }
+
   .stats-bar__grid { grid-template-columns: 1fr; }
   .stats-bar__item { border-right: none; }
   .residuos__features { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
-  .clientes__grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 2.2rem; }
+  .clientes__grid { grid-template-columns: 1fr; gap: 15px; }
+  .hero h1 { font-size: 2rem; }
+  
+  /* Feature Projects & Cards */
   .featured-project__meta { flex-direction: column; gap: 12px; }
+  .featured-project__title { font-size: 1.5rem; }
+  
+  .project-card { min-height: 180px; padding: 20px 16px; }
+  .project-card h4 { font-size: 1.1rem; }
+  
+  .client-card { padding: 20px 12px; min-height: 80px; }
+  .client-card__logo { max-height: 50px; }
+  
+  /* Section Headings */
+  .section-header h2 { font-size: 1.8rem; }
 }
