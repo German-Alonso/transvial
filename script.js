@@ -486,6 +486,27 @@ async function loadAdminContent() {
     // Footer RUT
     const rutEl = document.querySelector('.footer__rut');
     if (rutEl && data.contacto.rut) rutEl.textContent = 'RUT: ' + data.contacto.rut;
+
+    // Poblar Selector de Tipo de Consulta con Servicios
+    const selectTipo = document.getElementById('tipo');
+    if (selectTipo && data.servicios && data.servicios.length > 0) {
+      // Clear existing options except the first disabled one
+      const firstOp = selectTipo.querySelector('option[disabled]');
+      selectTipo.innerHTML = '';
+      if (firstOp) selectTipo.appendChild(firstOp);
+      
+      data.servicios.forEach(s => {
+        const option = document.createElement('option');
+        option.value = s.id;
+        option.textContent = s.title;
+        selectTipo.appendChild(option);
+      });
+      
+      const optionOtro = document.createElement('option');
+      optionOtro.value = 'otro';
+      optionOtro.textContent = 'Otro';
+      selectTipo.appendChild(optionOtro);
+    }
   }
 
   // Re-observe new elements for reveal animation
