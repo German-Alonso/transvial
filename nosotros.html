@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiénes Somos — Transvial Ltda.</title>
+  <meta name="description" content="Nuestra historia desde 1990 construyendo infraestructura que marca el territorio uruguayo. Transvial Ltda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="container container--wide">
+      <a href="index.html" class="navbar__logo">
+        <img src="assets/logo-white.png" alt="Transvial Ltda." class="navbar__logo-img">
+      </a>
+      <div class="navbar__links">
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#residuos">Residuos</a>
+        <a href="index.html#construccion">Construcción</a>
+        <a href="index.html#flota">Equipos</a>
+        <a href="nosotros.html" class="active">Nosotros</a>
+        <a href="index.html#clientes">Clientes</a>
+        <a href="index.html#contacto" class="navbar__cta">Contacto</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ====== NOSOTROS (Página Completa) ====== -->
+  <section class="nosotros" id="nosotros" style="padding-top: 150px; min-height: 100vh;">
+    <div class="container">
+      <div class="nosotros__header reveal">
+        <div class="section-label">Quiénes somos</div>
+        <h2 class="section-title">Nuestra Historia</h2>
+        <p class="section-desc">Desde San Antonio, Canelones, construimos infraestructura que marca el territorio uruguayo.</p>
+      </div>
+      <div class="nosotros__content">
+        <!-- Timeline -->
+        <div class="timeline reveal">
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">1990</div>
+            <h4>Fundación</h4>
+            <p>Nacemos como empresa familiar en San Antonio, Canelones. Primeros trabajos en movimiento de tierras y servicios viales.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">2000</div>
+            <h4>Primeros Proyectos Civiles</h4>
+            <p>Expansión hacia obras civiles e hidráulicas. Incorporación de nuevas líneas de servicio.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">2006</div>
+            <h4>Escalamiento</h4>
+            <p>Ampliación significativa de la flota de maquinaria y del equipo humano. Mayor capacidad operativa.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">2013</div>
+            <h4>Clientes Industriales</h4>
+            <p>Incorporación de clientes de gran escala: Louis Dreyfus, Conaprole, Salfacorp. Proyectos de mayor complejidad técnica.</p>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__year">Hoy</div>
+            <h4>Construcción Urbana + Gestión Ambiental</h4>
+            <p>Obras de gran envergadura como Montevideo Harbour. Nuevo posicionamiento en gestión de residuos y trazabilidad CD&R.</p>
+          </div>
+        </div>
+        <!-- Values -->
+        <div class="values-grid reveal reveal-delay-2">
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6C12 6 6 12 6 20s6 14 14 14 14-6 14-14"/><path d="M34 6l-14 14"/><path d="M26 6h8v8"/>
+              </svg>
+            </div>
+            <h4>Relaciones Duraderas</h4>
+            <p>Clientes que vuelven obra tras obra. Confianza construida con resultados, no con promesas.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="20" cy="14" r="6"/><path d="M8 34c0-6.6 5.4-12 12-12s12 5.4 12 12"/>
+              </svg>
+            </div>
+            <h4>Capital Humano</h4>
+            <p>Operadores especializados, técnicos de campo y equipos con experiencia probada en obra pesada.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="18" width="14" height="12" rx="1"/><path d="M18 24h10l6-4v10H18z"/><circle cx="10" cy="32" r="3"/><circle cx="28" cy="32" r="3"/><path d="M14 18V12h-6"/>
+              </svg>
+            </div>
+            <h4>Flota Propia</h4>
+            <p>Maquinaria pesada propia que garantiza disponibilidad, tiempos de respuesta y control de calidad.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 4v10"/><path d="M14 8l6 6 6-6"/><rect x="6" y="14" width="28" height="22" rx="1"/><path d="M6 22h28"/><path d="M16 22v14"/><path d="M24 22v14"/>
+              </svg>
+            </div>
+            <h4>Rigor Técnico</h4>
+            <p>Laboratorio de suelos in situ, procesos de control documentados y compromiso con la calidad constructiva.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__brand">
+          <img src="assets/logo-white.png" alt="Transvial Ltda." class="footer__logo-img">
+          <p class="footer__tagline">Obras viales, civiles, hidráulicas y gestión de residuos en Uruguay desde 1990.</p>
+          <p class="footer__rut">RUT: 02 011300 0019</p>
+        </div>
+        <div>
+          <h4>Secciones</h4>
+          <div class="footer__links">
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#residuos">Gestión de Residuos</a>
+            <a href="index.html#construccion">Construcción</a>
+            <a href="index.html#flota">Equipos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="index.html#clientes">Clientes</a>
+          </div>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <div class="footer__links">
+            <a href="index.html#servicios">Movimiento de Tierras</a>
+            <a href="index.html#servicios">Obras Viales</a>
+            <a href="index.html#servicios">Construcción Civil</a>
+            <a href="index.html#residuos">Gestión de Residuos</a>
+            <a href="index.html#flota">Alquiler de Equipos</a>
+            <a href="index.html#servicios">Venta de Materiales</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <div class="footer__links">
+            <div class="footer__contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Ruta 81 Km. 23, Canelones
+            </div>
+            <div class="footer__contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+              +598 4335 9036
+            </div>
+            <div class="footer__contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@transvial.com.uy
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        © 2025 Transvial Ltda. Todos los derechos reservados. — San Antonio, Canelones, Uruguay.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
