@@ -422,18 +422,21 @@ async function loadAdminContent() {
     const grid = document.querySelector('.flota__grid');
     if (grid) {
       grid.innerHTML = data.equipos.map((eq, i) => {
-        const hasMaquinas = data.maquinaria && data.maquinaria.some(m => String(m.equipoId) === String(eq.id));
+        const hasImage = eq.image ? true : false;
+        const bgStyle = hasImage ? `background-image: url('${eq.image}'); background-size: cover; background-position: center;` : '';
         return `
-        <div class="equip-card reveal reveal-delay-${(i % 4) + 1}">
-          <div class="equip-card__icon">
-            <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="14" y="28" width="22" height="12" rx="1"/><circle cx="18" cy="44" r="4"/><circle cx="32" cy="44" r="4"/>
-              <path d="M14 28l-6-14"/><path d="M8 14l-4 6h8"/><path d="M36 28l8-10"/><path d="M44 18l4 4-6 4"/>
-            </svg>
+        <div class="equip-card ${hasImage ? 'equip-card--has-bg' : ''} reveal reveal-delay-${(i % 4) + 1}" style="${bgStyle}">
+          ${hasImage ? '<div class="equip-card__overlay"></div>' : ''}
+          <div class="equip-card__content">
+            <div class="equip-card__icon">
+              <svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="14" y="28" width="22" height="12" rx="1"/><circle cx="18" cy="44" r="4"/><circle cx="32" cy="44" r="4"/>
+                <path d="M14 28l-6-14"/><path d="M8 14l-4 6h8"/><path d="M36 28l8-10"/><path d="M44 18l4 4-6 4"/>
+              </svg>
+            </div>
+            <h4>${escHtml(eq.title)}</h4>
+            <p>${escHtml(eq.desc)}</p>
           </div>
-          <h4>${escHtml(eq.title)}</h4>
-          <p>${escHtml(eq.desc)}</p>
-          ${hasMaquinas ? `<button class="equip-card__btn" onclick="openMaquinariaModal(${eq.id}, '${escHtml(eq.title.replace(/'/g,"\\'"))}')">Ver unidades</button>` : ''}
         </div>
       `}).join('');
     }

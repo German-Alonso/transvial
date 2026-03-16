@@ -733,7 +733,8 @@ function addEquipo() {
     data.equipos.push({
       id,
       title: document.getElementById('m_title').value,
-      desc: document.getElementById('m_desc').value
+      desc: document.getElementById('m_desc').value,
+      image: document.getElementById('m_image').value
     });
     saveData();
     renderEquipos();
@@ -747,6 +748,7 @@ function editEquipo(id) {
   openModal('Editar Equipo', equipoFormHtml(eq), () => {
     eq.title = document.getElementById('m_title').value;
     eq.desc = document.getElementById('m_desc').value;
+    eq.image = document.getElementById('m_image').value;
     saveData();
     renderEquipos();
     showToast('Equipo actualizado');
@@ -772,6 +774,7 @@ function equipoFormHtml(eq = {}) {
       <label>Descripción / Función</label>
       <textarea id="m_desc" rows="3">${escapeHtml(eq.desc || '')}</textarea>
     </div>
+    ${imageUploadHtml('m_image', eq.image)}
   `;
 }
 
